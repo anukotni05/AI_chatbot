@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyDKLN6IxEzHkuuFIkMYsLwSifbEgtUzoNo")
+genai.configure(api_key="add your gemini key")
 model = genai.GenerativeModel('gemini-2.5-pro')
 
 UPLOAD_FOLDER = 'uploads'
