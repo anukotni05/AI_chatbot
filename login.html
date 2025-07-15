@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - AI BOT</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f5f5dc;
+      font-family: 'Segoe UI', sans-serif;
+      color: #4b2e2e;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      margin: 100px auto;
+      background: #fff5e1;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fefae0;
+      color: #4b2e2e;
+    }
+
+    button {
+      background-color: #a97449;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #8d5f33;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .link a {
+      color: #8d5f33;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form method="POST" action="/login">
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div class="link">
+      <p>Don't have an account? <a href="/register">Register here</a></p>
+    </div>
+  </div>
+</body>
+</html>

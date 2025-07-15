@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Register - AI BOT</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #f5f5dc;
+      font-family: 'Segoe UI', sans-serif;
+      color: #4b2e2e;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+      margin: 100px auto;
+      background: #fff5e1;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fefae0;
+      color: #4b2e2e;
+    }
+
+    button {
+      background-color: #a97449;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #8d5f33;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .link a {
+      color: #8d5f33;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <form method="POST" action="/register">
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+    <div class="link">
+      <p>Already have an account? <a href="/login">Login here</a></p>
+    </div>
+  </div>
+  <meter id="strengthMeter" min="0" max="4"></meter>
+<script>
+  document.querySelector('input[name="password"]').addEventListener('input', function() {
+    const val = this.value;
+    const meter = document.getElementById("strengthMeter");
+    let strength = 0;
+    if (val.length > 5) strength++;
+    if (/[A-Z]/.test(val)) strength++;
+    if (/[0-9]/.test(val)) strength++;
+    if (/[^A-Za-z0-9]/.test(val)) strength++;
+    meter.value = strength;
+  });
+</script>
+</body>
+</html>
